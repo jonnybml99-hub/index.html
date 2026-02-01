@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Sari 💖</title>
+
+<style>
+body {
+  margin:0;
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(135deg,#ffd1dc,#ffe6f0);
+  font-family:Arial, sans-serif;
+  overflow:hidden;
+}
+
+h1 {
+  font-size:2.4rem;
+  text-align:center;
+  margin-bottom:35px;
+}
+
+#yes {
+  font-size:2rem;
+  padding:18px 45px;
+  border:none;
+  border-radius:15px;
+  background:#ff4d6d;
+  color:white;
+}
+
+#no {
+  position:absolute;
+  font-size:0.8rem;
+  padding:6px 12px;
+  border:none;
+  border-radius:8px;
+  background:#222;
+  color:white;
+}
+
+.heart {
+  position:absolute;
+  font-size:24px;
+  animation:float 2s ease-out forwards;
+}
+
+@keyframes float {
+  from {transform:translateY(0); opacity:1;}
+  to {transform:translateY(-150px); opacity:0;}
+}
+</style>
+</head>
+
+<body>
+
+<h1>Sari… will you be my Valentine? 💘</h1>
+
+<button id="yes">YES 💖</button>
+<button id="no">no</button>
+
+<script>
+const noBtn = document.getElementById("no");
+const yesBtn = document.getElementById("yes");
+
+function moveNo(){
+  const x = Math.random() * (window.innerWidth - 100);
+  const y = Math.random() * (window.innerHeight - 60);
+  noBtn.style.left = x + "px";
+  noBtn.style.top = y + "px";
+}
+
+noBtn.addEventListener("mouseover", moveNo);
+noBtn.addEventListener("touchstart", moveNo);
+
+function explodeHearts(){
+  for(let i=0;i<25;i++){
+    const heart = document.createElement("div");
+    heart.className="heart";
+    heart.innerHTML="❤️";
+    heart.style.left = Math.random()*window.innerWidth+"px";
+    heart.style.top = Math.random()*window.innerHeight+"px";
+    document.body.appendChild(heart);
+    setTimeout(()=>heart.remove(),2000);
+  }
+}
+
+yesBtn.onclick = () => {
+  explodeHearts();
+  document.body.innerHTML = `
+    <h1>Sara ❤️</h1>
+    <p style="font-size:1.3rem; max-width:300px; text-align:center;">
+      I don’t need a special day to choose you —  
+      but I’d love to make this one ours.  
+      You make life lighter, funnier, and better just by being you.
+      <br><br>
+      Happy Valentine’s Day, Sari 💕
+    </p>
+  `;
+};
+</script>
+
+</body>
+</html>
