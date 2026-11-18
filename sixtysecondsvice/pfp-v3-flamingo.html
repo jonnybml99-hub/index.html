@@ -1,0 +1,138 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><style>html,body{margin:0;background:#0b0418}svg{display:block}</style></head><body>
+<svg id="pfp" width="1080" height="1080" viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1a0640"/><stop offset=".45" stop-color="#6a1480"/>
+      <stop offset=".75" stop-color="#ff4f8b"/><stop offset="1" stop-color="#ffb04d"/>
+    </linearGradient>
+    <linearGradient id="sun" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff07a"/><stop offset="1" stop-color="#ff6a5c"/>
+    </linearGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#00c2ff"/><stop offset="1" stop-color="#1b0750"/>
+    </linearGradient>
+    <linearGradient id="pink" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffb3d9"/><stop offset=".6" stop-color="#ff5fae"/><stop offset="1" stop-color="#e0368c"/>
+    </linearGradient>
+    <linearGradient id="wing" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff7fc0"/><stop offset="1" stop-color="#c41f78"/>
+    </linearGradient>
+    <linearGradient id="lens" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#00e5ff"/><stop offset=".45" stop-color="#2a0a5a"/><stop offset=".55" stop-color="#ff2e9a"/><stop offset="1" stop-color="#ffd36b"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff6c2"/><stop offset=".5" stop-color="#ffc83d"/><stop offset="1" stop-color="#b8740e"/>
+    </linearGradient>
+    <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#00e5ff"/><stop offset="1" stop-color="#ff2e9a"/>
+    </linearGradient>
+    <clipPath id="c"><circle cx="540" cy="540" r="505"/></clipPath>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="9" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="20"/></filter>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#1a0030" flood-opacity=".55"/></filter>
+    <path id="arcTop" d="M130 540 A410 410 0 0 1 950 540"/>
+  </defs>
+
+  <rect width="1080" height="1080" fill="#0b0418"/>
+  <g clip-path="url(#c)">
+    <rect width="1080" height="1080" fill="url(#sky)"/>
+    <!-- sun -->
+    <circle cx="540" cy="640" r="300" fill="#ff5f8b" opacity=".5" filter="url(#soft)"/>
+    <circle cx="540" cy="640" r="270" fill="url(#sun)"/>
+    <g fill="#ff4f8b"><rect x="260" y="700" width="560" height="10"/><rect x="260" y="736" width="560" height="16"/><rect x="260" y="776" width="560" height="22"/></g>
+    <!-- sea -->
+    <rect x="0" y="830" width="1080" height="260" fill="url(#sea)"/>
+    <g stroke="#fff" stroke-opacity=".5" stroke-width="4" stroke-linecap="round">
+      <line x1="180" y1="870" x2="300" y2="870"/><line x1="760" y1="880" x2="900" y2="880"/>
+      <line x1="300" y1="930" x2="380" y2="930"/><line x1="680" y1="950" x2="780" y2="950"/>
+    </g>
+    <!-- palms -->
+    <g fill="#16052e">
+      <path d="M95 1080 C110 900 140 760 190 620 L202 624 C160 760 132 900 130 1080Z"/>
+      <path d="M195 620 C140 570 70 570 20 600 C80 585 140 592 192 630Z"/>
+      <path d="M195 620 C170 545 110 510 50 510 C120 530 160 570 192 628Z"/>
+      <path d="M196 620 C215 545 270 510 340 515 C280 540 230 575 200 628Z"/>
+      <path d="M196 622 C255 590 320 600 360 640 C305 620 250 620 200 632Z"/>
+      <path d="M985 1080 C972 920 945 800 900 680 L888 686 C928 800 952 920 950 1080Z"/>
+      <path d="M894 683 C944 635 1010 640 1060 670 C1000 655 945 662 897 692Z"/>
+      <path d="M894 683 C920 615 980 585 1040 590 C975 605 930 645 897 690Z"/>
+      <path d="M893 683 C870 615 810 590 750 595 C810 615 858 650 890 690Z"/>
+      <path d="M893 685 C840 655 775 665 735 705 C790 685 845 688 890 695Z"/>
+    </g>
+  </g>
+
+  <!-- neon outer ring -->
+  <circle cx="540" cy="540" r="505" fill="none" stroke="url(#ring)" stroke-width="12" filter="url(#glow)"/>
+
+  <!-- curved title -->
+  <text font-family="Inter Display, Inter, sans-serif" font-weight="900" font-size="58" letter-spacing="18" fill="#fff" text-anchor="middle" filter="url(#glow)">
+    <textPath href="#arcTop" startOffset="50%">SIXTY · SECONDS</textPath>
+  </text>
+
+  <!-- FLAMINGO -->
+  <g filter="url(#shadow)">
+    <!-- legs -->
+    <g stroke="#ff5fae" stroke-width="13" stroke-linecap="round" fill="none">
+      <path d="M600 770 L604 880"/>
+      <path d="M560 770 L540 870 L640 840"/>
+    </g>
+    <circle cx="540" cy="870" r="10" fill="#e0368c"/><ellipse cx="604" cy="884" rx="36" ry="8" fill="none" stroke="#fff" stroke-opacity=".6" stroke-width="3"/>
+    <!-- tail -->
+    <path d="M720 640 C790 620 840 660 860 700 C820 690 790 700 760 720Z" fill="#e0368c"/>
+    <path d="M715 660 C790 670 830 720 835 760 C800 730 770 730 740 735Z" fill="#c41f78"/>
+    <!-- body -->
+    <ellipse cx="600" cy="690" rx="170" ry="110" transform="rotate(-12 600 690)" fill="url(#pink)"/>
+    <!-- neck -->
+    <path d="M470 660 C385 590 390 490 470 440 C545 395 525 330 470 315" fill="none" stroke="url(#pink)" stroke-width="58" stroke-linecap="round"/>
+    <!-- wing -->
+    <path d="M540 650 C600 600 700 600 760 650 C730 720 650 760 560 740 C590 720 600 700 560 690Z" fill="url(#wing)"/>
+    <path d="M590 675 C640 650 690 655 730 670" fill="none" stroke="#ffd1ea" stroke-width="5" stroke-linecap="round" opacity=".7"/>
+    <path d="M600 705 C645 690 685 692 715 702" fill="none" stroke="#ffd1ea" stroke-width="5" stroke-linecap="round" opacity=".6"/>
+    <!-- head -->
+    <circle cx="475" cy="300" r="62" fill="url(#pink)"/>
+    <!-- beak -->
+    <path d="M420 290 C370 288 336 316 342 372 C356 352 380 340 410 336 C424 334 436 330 440 322Z" fill="#fff3e8"/>
+    <path d="M352 336 C340 350 338 362 342 372 C352 358 366 348 382 342Z" fill="#14052a"/>
+    <!-- sunglasses -->
+    <path d="M525 288 C560 284 580 286 586 290" stroke="#14052a" stroke-width="8" fill="none" stroke-linecap="round"/>
+    <path d="M430 270 H530 C536 270 538 276 536 284 C530 318 510 336 484 336 C454 336 436 314 430 284 C428 276 428 270 430 270Z" fill="url(#lens)" stroke="#14052a" stroke-width="7"/>
+    <path d="M448 282 L470 282" stroke="#fff" stroke-width="6" stroke-linecap="round" opacity=".85"/>
+    <path d="M446 296 L458 296" stroke="#fff" stroke-width="4" stroke-linecap="round" opacity=".7"/>
+    <!-- head feather tuft -->
+    <path d="M500 242 C510 210 535 200 548 205 C530 212 520 228 515 248Z" fill="#ff5fae"/>
+
+    <!-- gold chain -->
+    <path d="M425 420 C420 470 450 510 480 520 C510 510 520 470 515 430" fill="none" stroke="url(#gold)" stroke-width="9" stroke-dasharray="14 6" stroke-linecap="round"/>
+    <!-- stopwatch medallion -->
+    <g transform="translate(482 585)">
+      <rect x="-14" y="-82" width="28" height="22" rx="5" fill="url(#gold)"/>
+      <circle r="70" fill="url(#gold)"/>
+      <circle r="56" fill="#14052a"/>
+      <circle r="56" fill="none" stroke="#00e5ff" stroke-width="4" filter="url(#glow)"/>
+      <g id="ticks"></g>
+      <text y="18" text-anchor="middle" font-family="Inter Display, Inter, sans-serif" font-weight="900" font-style="italic" font-size="54" fill="#ff5fae" filter="url(#glow)" letter-spacing="-3">60</text>
+    </g>
+  </g>
+
+  <!-- VICE neon sign -->
+  <g font-family="Inter Display, Inter, sans-serif" font-weight="900" font-style="italic" text-anchor="middle">
+    <text x="540" y="985" font-size="110" letter-spacing="14" fill="none" stroke="#00e5ff" stroke-width="9" filter="url(#glow)">VICE</text>
+    <text x="540" y="985" font-size="110" letter-spacing="14" fill="#eafcff">VICE</text>
+  </g>
+  <g fill="#fff" filter="url(#glow)">
+    <path d="M300 230 Q300 250 320 250 Q300 250 300 270 Q300 250 280 250 Q300 250 300 230Z"/>
+    <path d="M800 300 Q800 316 816 316 Q800 316 800 332 Q800 316 784 316 Q800 316 800 300Z"/>
+    <path d="M760 200 Q760 210 770 210 Q760 210 760 220 Q760 210 750 210 Q760 210 760 200Z"/>
+  </g>
+</svg>
+<script>
+const NS='http://www.w3.org/2000/svg',g=document.getElementById('ticks');
+for(let i=0;i<12;i++){const a=i*30*Math.PI/180,l=document.createElementNS(NS,'line');
+l.setAttribute('x1',Math.sin(a)*48);l.setAttribute('y1',-Math.cos(a)*48);
+l.setAttribute('x2',Math.sin(a)*40);l.setAttribute('y2',-Math.cos(a)*40);
+l.setAttribute('stroke','#fff');l.setAttribute('stroke-width',3);l.setAttribute('stroke-linecap','round');g.appendChild(l);}
+</script>
+</body></html>

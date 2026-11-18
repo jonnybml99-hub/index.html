@@ -1,0 +1,135 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><style>html,body{margin:0;background:#07020f}svg{display:block}</style></head><body>
+<svg id="pfp" width="1080" height="1080" viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0d0326"/><stop offset=".55" stop-color="#3a0a5e"/><stop offset="1" stop-color="#ff2e88"/>
+    </linearGradient>
+    <linearGradient id="case" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2a2238"/><stop offset="1" stop-color="#120c1c"/>
+    </linearGradient>
+    <linearGradient id="label" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#fff4e6"/><stop offset="1" stop-color="#ffe2f1"/>
+    </linearGradient>
+    <linearGradient id="win" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4a0f7a"/><stop offset=".6" stop-color="#ff3d8b"/><stop offset="1" stop-color="#ffb04d"/>
+    </linearGradient>
+    <linearGradient id="sun" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff07a"/><stop offset="1" stop-color="#ff6a5c"/>
+    </linearGradient>
+    <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#00e5ff"/><stop offset="1" stop-color="#ff2e9a"/>
+    </linearGradient>
+    <clipPath id="c"><circle cx="540" cy="540" r="505"/></clipPath>
+    <clipPath id="window"><rect x="-200" y="-30" width="400" height="120" rx="14"/></clipPath>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="24"/></filter>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="24" stdDeviation="20" flood-color="#000" flood-opacity=".6"/></filter>
+    <pattern id="scan" width="6" height="6" patternUnits="userSpaceOnUse"><rect width="6" height="3" fill="#000" opacity=".22"/></pattern>
+    <pattern id="grid" width="70" height="70" patternUnits="userSpaceOnUse"><path d="M70 0H0V70" fill="none" stroke="#00e5ff" stroke-opacity=".35" stroke-width="2"/></pattern>
+  </defs>
+
+  <rect width="1080" height="1080" fill="#07020f"/>
+  <g clip-path="url(#c)">
+    <rect width="1080" height="1080" fill="url(#bg)"/>
+    <!-- perspective floor grid -->
+    <g transform="translate(540 760)" stroke="#00e5ff" stroke-opacity=".5" stroke-width="2.5">
+      <line x1="0" y1="0" x2="0" y2="400"/>
+      <line x1="-60" y1="0" x2="-300" y2="400"/><line x1="60" y1="0" x2="300" y2="400"/>
+      <line x1="-130" y1="0" x2="-650" y2="400"/><line x1="130" y1="0" x2="650" y2="400"/>
+      <line x1="-220" y1="0" x2="-1100" y2="400"/><line x1="220" y1="0" x2="1100" y2="400"/>
+      <line x1="-600" y1="20" x2="600" y2="20"/><line x1="-600" y1="55" x2="600" y2="55"/>
+      <line x1="-600" y1="110" x2="600" y2="110"/><line x1="-600" y1="195" x2="600" y2="195"/>
+      <line x1="-600" y1="320" x2="600" y2="320"/>
+    </g>
+    <rect x="0" y="760" width="1080" height="4" fill="#ff2e9a" filter="url(#glow)"/>
+    <!-- big glow behind cassette -->
+    <ellipse cx="540" cy="540" rx="380" ry="260" fill="#ff2e9a" opacity=".45" filter="url(#soft)"/>
+  </g>
+
+  <!-- VCR on-screen display -->
+  <g font-family="JetBrains Mono, monospace" font-weight="800" fill="#ffffff" filter="url(#glow)">
+    <text x="215" y="215" font-size="54">▶ PLAY</text>
+    <text x="865" y="215" font-size="54" text-anchor="end" fill="#ff2e9a">● REC</text>
+  </g>
+
+  <!-- CASSETTE (tilted) -->
+  <g transform="translate(540 520) rotate(-8)" filter="url(#shadow)">
+    <!-- chromatic glitch copies -->
+    <rect x="-372" y="-222" width="740" height="444" rx="34" fill="#00e5ff" opacity=".55"/>
+    <rect x="-364" y="-218" width="740" height="444" rx="34" fill="#ff2e9a" opacity=".55"/>
+    <!-- body -->
+    <rect x="-370" y="-220" width="740" height="440" rx="34" fill="url(#case)" stroke="#4a3d5c" stroke-width="4"/>
+    <!-- screws -->
+    <g fill="#5d5070"><circle cx="-335" cy="-185" r="9"/><circle cx="335" cy="-185" r="9"/><circle cx="-335" cy="185" r="9"/><circle cx="335" cy="185" r="9"/></g>
+
+    <!-- label -->
+    <rect x="-320" y="-190" width="640" height="150" rx="10" fill="url(#label)"/>
+    <g>
+      <rect x="-320" y="-150" width="640" height="14" fill="#00e5ff"/>
+      <rect x="-320" y="-130" width="640" height="10" fill="#ff2e9a"/>
+      <rect x="-320" y="-114" width="640" height="6" fill="#ffb04d"/>
+    </g>
+    <text x="-300" y="-160" font-family="JetBrains Mono, monospace" font-weight="800" font-size="24" fill="#3a0a5e">T-60</text>
+    <text x="300" y="-160" font-family="JetBrains Mono, monospace" font-weight="800" font-size="24" fill="#3a0a5e" text-anchor="end">SP · HI-FI</text>
+    <g font-family="Inter Display, Inter, sans-serif" font-weight="900" font-style="italic" text-anchor="middle">
+      <text x="0" y="-52" font-size="60" fill="#14052a" letter-spacing="2">SIXTY SECONDS</text>
+    </g>
+
+    <!-- tape window with a sunset scene and reels -->
+    <g transform="translate(0 50)">
+      <rect x="-216" y="-44" width="432" height="148" rx="20" fill="#0a0612"/>
+      <g clip-path="url(#window)">
+        <rect x="-200" y="-30" width="400" height="120" fill="url(#win)"/>
+        <circle cx="0" cy="70" r="62" fill="url(#sun)"/>
+        <g fill="#ff3d8b"><rect x="-70" y="60" width="140" height="5"/><rect x="-70" y="74" width="140" height="7"/></g>
+        <rect x="-200" y="80" width="400" height="20" fill="#00b8ff"/>
+        <!-- tiny palms -->
+        <g fill="#14052a">
+          <path d="M-120 92 C-118 60 -110 40 -100 26 L-96 28 C-104 42 -110 62 -110 92Z"/>
+          <path d="M-98 27 C-112 16 -130 18 -140 26 C-126 22 -112 24 -98 32Z"/>
+          <path d="M-98 27 C-90 14 -74 12 -64 16 C-78 18 -88 24 -96 32Z"/>
+          <path d="M-98 27 C-104 12 -116 6 -126 8 C-114 12 -106 20 -98 30Z"/>
+          <path d="M120 92 C118 66 112 50 104 38 L100 40 C106 52 110 68 110 92Z"/>
+          <path d="M102 39 C114 30 130 32 138 40 C126 36 114 38 102 44Z"/>
+          <path d="M102 39 C96 28 84 24 74 28 C86 30 94 36 100 44Z"/>
+        </g>
+        <!-- reels -->
+        <g id="reelL" transform="translate(-112 30)"></g>
+        <g id="reelR" transform="translate(112 30)"></g>
+        <rect x="-200" y="-30" width="400" height="120" fill="url(#scan)"/>
+      </g>
+      <rect x="-200" y="-30" width="400" height="120" rx="14" fill="none" stroke="#fff" stroke-opacity=".25" stroke-width="3"/>
+      <path d="M-180 -20 L-120 -20" stroke="#fff" stroke-opacity=".4" stroke-width="6" stroke-linecap="round"/>
+    </g>
+    <!-- bottom trapezoid -->
+    <path d="M-250 220 L-220 160 H220 L250 220Z" fill="#1c1528" stroke="#4a3d5c" stroke-width="3"/>
+    <g fill="#0a0612"><circle cx="-150" cy="192" r="12"/><circle cx="150" cy="192" r="12"/><rect x="-40" y="182" width="80" height="20" rx="6"/></g>
+  </g>
+
+  <!-- 60 neon timestamp + VICE -->
+  <g font-family="Inter Display, Inter, sans-serif" font-weight="900" font-style="italic" text-anchor="middle">
+    <text x="540" y="935" font-size="150" letter-spacing="8" fill="none" stroke="#ff2e9a" stroke-width="10" filter="url(#glow)">VICE</text>
+    <text x="540" y="935" font-size="150" letter-spacing="8" fill="#fff0f8">VICE</text>
+  </g>
+  <!-- timecode -->
+  <text x="540" y="1000" text-anchor="middle" font-family="JetBrains Mono, monospace" font-weight="800" font-size="40" fill="#00e5ff" filter="url(#glow)">▶ 0:60</text>
+
+  <!-- whole-image scanlines + ring -->
+  <g clip-path="url(#c)"><rect width="1080" height="1080" fill="url(#scan)" opacity=".5"/></g>
+  <circle cx="540" cy="540" r="505" fill="none" stroke="url(#ring)" stroke-width="12" filter="url(#glow)"/>
+</svg>
+<script>
+const NS='http://www.w3.org/2000/svg';
+function reel(id,tape){const g=document.getElementById(id);
+  const t=document.createElementNS(NS,'circle');t.setAttribute('r',tape);t.setAttribute('fill','#2a1a1a');t.setAttribute('opacity','.85');g.appendChild(t);
+  const h=document.createElementNS(NS,'circle');h.setAttribute('r',22);h.setAttribute('fill','#f4f0ff');g.appendChild(h);
+  for(let i=0;i<6;i++){const a=i*60*Math.PI/180,r=document.createElementNS(NS,'rect');
+    r.setAttribute('x',-3);r.setAttribute('y',-20);r.setAttribute('width',6);r.setAttribute('height',10);r.setAttribute('fill','#14052a');
+    r.setAttribute('transform',`rotate(${i*60})`);g.appendChild(r);}
+  const c=document.createElementNS(NS,'circle');c.setAttribute('r',7);c.setAttribute('fill','#14052a');g.appendChild(c);}
+reel('reelL',54);reel('reelR',32);
+</script>
+</body></html>
