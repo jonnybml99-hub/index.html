@@ -1,0 +1,165 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><style>
+html,body{margin:0;background:#0b0418}
+svg{display:block}
+</style></head><body>
+<svg id="pfp" width="1080" height="1080" viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#12052e"/>
+      <stop offset=".45" stop-color="#3a0b5c"/>
+      <stop offset=".7" stop-color="#b8226e"/>
+      <stop offset="1" stop-color="#ff7a4d"/>
+    </linearGradient>
+    <linearGradient id="sun" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffe66b"/>
+      <stop offset=".5" stop-color="#ff8a3d"/>
+      <stop offset="1" stop-color="#ff2e88"/>
+    </linearGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2a0a4a"/>
+      <stop offset="1" stop-color="#07021a"/>
+    </linearGradient>
+    <linearGradient id="arc" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#00f0ff"/>
+      <stop offset=".5" stop-color="#9b5cff"/>
+      <stop offset="1" stop-color="#ff2e9a"/>
+    </linearGradient>
+    <linearGradient id="chrome" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset=".42" stop-color="#bfe9ff"/>
+      <stop offset=".5" stop-color="#3a1a6b"/>
+      <stop offset=".58" stop-color="#ff5fb8"/>
+      <stop offset="1" stop-color="#ffd27a"/>
+    </linearGradient>
+    <clipPath id="circle"><circle cx="540" cy="540" r="440"/></clipPath>
+    <clipPath id="sundisc"><circle cx="540" cy="560" r="220"/></clipPath>
+    <clipPath id="sunclip"><rect x="0" y="0" width="1080" height="640"/></clipPath>
+    <filter id="glowPink" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="10" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glowSoft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M60 0H0V60" fill="none" stroke="#ff2e9a" stroke-opacity=".35" stroke-width="2"/>
+    </pattern>
+  </defs>
+
+  <!-- outer background -->
+  <rect width="1080" height="1080" fill="#0b0418"/>
+  <circle cx="540" cy="540" r="520" fill="url(#arc)" opacity=".25" filter="url(#glowSoft)"/>
+
+  <!-- scene inside the stopwatch -->
+  <g clip-path="url(#circle)">
+    <rect width="1080" height="1080" fill="url(#sky)"/>
+    <!-- stars -->
+    <g fill="#fff">
+      <circle cx="260" cy="230" r="3"/><circle cx="380" cy="170" r="2"/><circle cx="720" cy="200" r="3"/>
+      <circle cx="820" cy="300" r="2"/><circle cx="300" cy="350" r="2"/><circle cx="640" cy="140" r="2"/>
+      <circle cx="470" cy="260" r="1.6"/><circle cx="880" cy="420" r="1.6"/>
+    </g>
+    <!-- striped retro sun -->
+    <g clip-path="url(#sunclip)">
+      <circle cx="540" cy="560" r="250" fill="#ff2e88" opacity=".45" filter="url(#glowSoft)"/>
+      <circle cx="540" cy="560" r="220" fill="url(#sun)"/>
+      <g fill="#3a0b5c" clip-path="url(#sundisc)">
+        <rect x="300" y="520" width="480" height="8"/>
+        <rect x="300" y="548" width="480" height="12"/>
+        <rect x="300" y="580" width="480" height="16"/>
+        <rect x="300" y="614" width="480" height="20"/>
+      </g>
+    </g>
+    <!-- sea with perspective grid -->
+    <rect x="0" y="640" width="1080" height="440" fill="url(#sea)"/>
+    <g transform="translate(540 640)">
+      <g stroke="#ff2e9a" stroke-opacity=".55" stroke-width="2.5">
+        <line x1="0" y1="0" x2="0" y2="440"/>
+        <line x1="-40" y1="0" x2="-260" y2="440"/><line x1="40" y1="0" x2="260" y2="440"/>
+        <line x1="-80" y1="0" x2="-560" y2="440"/><line x1="80" y1="0" x2="560" y2="440"/>
+        <line x1="-130" y1="0" x2="-900" y2="440"/><line x1="130" y1="0" x2="900" y2="440"/>
+        <line x1="-560" y1="14" x2="560" y2="14"/>
+        <line x1="-560" y1="36" x2="560" y2="36"/>
+        <line x1="-560" y1="70" x2="560" y2="70"/>
+        <line x1="-560" y1="120" x2="560" y2="120"/>
+        <line x1="-560" y1="195" x2="560" y2="195"/>
+        <line x1="-560" y1="300" x2="560" y2="300"/>
+      </g>
+    </g>
+    <line x1="0" y1="640" x2="1080" y2="640" stroke="#00f0ff" stroke-width="4" filter="url(#glowPink)"/>
+
+    <!-- palm silhouettes -->
+    <g fill="#07021a">
+      <!-- left palm -->
+      <path d="M150 1080 C170 900 200 760 250 600 L262 604 C220 760 196 900 186 1080Z"/>
+      <path d="M255 600 C200 540 120 540 60 580 C130 560 190 570 250 610Z"/>
+      <path d="M255 600 C220 520 150 480 90 480 C160 500 210 540 252 606Z"/>
+      <path d="M256 600 C270 520 330 480 400 480 C340 510 290 550 260 606Z"/>
+      <path d="M256 602 C320 560 400 570 450 620 C390 595 320 590 260 610Z"/>
+      <path d="M255 600 C250 530 270 470 300 440 C285 500 275 550 262 606Z"/>
+      <path d="M254 604 C210 620 170 670 160 730 C190 680 220 645 260 612Z"/>
+      <!-- right palm -->
+      <path d="M930 1080 C915 940 880 820 820 700 L808 706 C860 820 890 940 896 1080Z"/>
+      <path d="M815 702 C870 650 950 650 1010 690 C940 670 880 680 820 712Z"/>
+      <path d="M815 702 C850 630 920 600 980 600 C910 620 860 655 818 708Z"/>
+      <path d="M814 702 C790 630 730 600 670 605 C730 625 780 660 810 708Z"/>
+      <path d="M814 704 C760 670 690 680 650 720 C710 700 770 700 810 712Z"/>
+      <path d="M816 706 C860 720 890 770 895 820 C870 775 845 745 812 714Z"/>
+    </g>
+  </g>
+
+  <!-- stopwatch dial: 60 ticks -->
+  <g id="ticks" transform="translate(540 540)"></g>
+
+  <!-- dial ring -->
+  <circle cx="540" cy="540" r="452" fill="none" stroke="#1b0a33" stroke-width="22"/>
+  <!-- neon countdown arc (about 50 of 60 seconds) -->
+  <circle cx="540" cy="540" r="452" fill="none" stroke="url(#arc)" stroke-width="16" stroke-linecap="round"
+          stroke-dasharray="2367 2840" transform="rotate(-90 540 540)" filter="url(#glowPink)"/>
+  <!-- tip dot of arc -->
+  <circle id="tip" r="16" fill="#fff" filter="url(#glowPink)"/>
+
+  <!-- stopwatch crown on top -->
+  <g filter="url(#glowPink)">
+    <rect x="505" y="40" width="70" height="34" rx="8" fill="#ff2e9a"/>
+    <rect x="525" y="70" width="30" height="22" fill="#ff2e9a"/>
+  </g>
+
+  <!-- big chrome 60 -->
+  <g font-family="Inter Display, Inter, sans-serif" font-weight="900" font-style="italic" text-anchor="middle">
+    <text x="540" y="560" font-size="380" fill="none" stroke="#ff2e9a" stroke-width="22" opacity=".55" filter="url(#glowSoft)" letter-spacing="-18">60</text>
+    <text x="548" y="568" font-size="380" fill="#07021a" letter-spacing="-18">60</text>
+    <text x="540" y="560" font-size="380" fill="url(#chrome)" stroke="#ffffff" stroke-width="4" letter-spacing="-18">60</text>
+  </g>
+
+  <!-- neon script label -->
+  <g text-anchor="middle" font-family="Inter Display, Inter, sans-serif" font-weight="900">
+    <text x="540" y="660" font-size="64" letter-spacing="14" fill="#00f0ff" filter="url(#glowPink)">SECONDS</text>
+    <text x="540" y="780" font-size="124" font-style="italic" letter-spacing="10" fill="none" stroke="#ff2e9a" stroke-width="7" filter="url(#glowPink)">VICE</text>
+    <text x="540" y="780" font-size="124" font-style="italic" letter-spacing="10" fill="#ff2e9a" fill-opacity=".35" stroke="#ffd6ec" stroke-width="2.5">VICE</text>
+  </g>
+</svg>
+<script>
+  const g = document.getElementById('ticks');
+  for (let i = 0; i < 60; i++) {
+    const a = i * 6 * Math.PI / 180;
+    const big = i % 5 === 0;
+    const r1 = 420, r2 = big ? 392 : 406;
+    const l = document.createElementNS('http://www.w3.org/2000/svg','line');
+    l.setAttribute('x1', Math.sin(a)*r1); l.setAttribute('y1', -Math.cos(a)*r1);
+    l.setAttribute('x2', Math.sin(a)*r2); l.setAttribute('y2', -Math.cos(a)*r2);
+    l.setAttribute('stroke', big ? '#ffffff' : '#ffb3dc');
+    l.setAttribute('stroke-width', big ? 6 : 3);
+    l.setAttribute('stroke-opacity', big ? 1 : .7);
+    l.setAttribute('stroke-linecap','round');
+    g.appendChild(l);
+  }
+  // place tip at end of arc (2367/2840 of circumference)
+  const frac = 2367 / (2*Math.PI*452);
+  const ang = frac * 2 * Math.PI;
+  const tip = document.getElementById('tip');
+  tip.setAttribute('cx', 540 + Math.sin(ang)*452);
+  tip.setAttribute('cy', 540 - Math.cos(ang)*452);
+</script>
+</body></html>
