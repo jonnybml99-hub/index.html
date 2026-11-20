@@ -56,6 +56,25 @@ Only fetching a YouTube video needs vidIQ (`trim_media`, 1 credit), because
 YouTube is blocked from the container. With 0 credits: ask the user to upload
 their own recording (best for tips/tricks content) and skip step 3.
 
+## Tips & tricks reels from a phone recording (the user's main workflow)
+
+The user is often on their phone only. Chat uploads are capped at 30 MB, so
+they screen-record the YouTube video and share a **Google Drive link**
+("Jeder mit dem Link"). Drive hosts are allowed in the Default environment.
+1. Download (gdown fails - it redirects to a blocked host):
+   `curl -sSL -o source.mp4 "https://drive.usercontent.google.com/download?id=FILE_ID&export=download&confirm=t"`
+2. iPhone recordings come in portrait with the landscape picture rotated.
+   Check a frame; fix with
+   `ffmpeg -i source.mp4 -vf "transpose=2,scale=1920:1080,fps=30" -crf 18 land.mp4`
+   (transpose=1 if it is the other way round).
+3. Watch it: contact sheet (`-vf "fps=1/10,scale=234:-1,tile=8x5"`) plus
+   `captions.py land.mp4 --lang de --srt de.srt` for a timed transcript.
+   Cut one reel per tip/topic (20-55 s), at sentence boundaries.
+4. Render with `LAYOUT=tips` (whole 16:9 frame, so the video's own info boxes
+   at the edges stay visible; 2-line German hook title with `$'Zeile 1\nZeile 2'`),
+   then `captions.py ... --lang de --y 1330`.
+   Run at most 3 renders in parallel and use a long background timeout.
+
 ## Notes
 
 - Before spending credits, check `vidiq_balance`; tell the user what fits.
