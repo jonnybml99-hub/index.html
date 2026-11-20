@@ -53,6 +53,18 @@ elif [ "$LAYOUT" = "gameplay" ]; then
 [c]crop=$GAMESQ,scale=1080:1080:flags=lanczos[game];
 [bg][game]overlay=0:380,
 $TXT$CAPTXT[v]"
+elif [ "$LAYOUT" = "tips" ]; then
+  # Full uncropped 16:9 frame (keeps on-screen info boxes at the edges),
+  # big 1-2 line title above (use \n in TITLE), room for captions below (--y 1330).
+  FILTER="
+[0:v]scale=1920:1080,split=2[a][c];
+[a]crop=1080:1080:420:0,scale=1920:1920,crop=1080:1920:420:0,boxblur=30:3,eq=brightness=-0.3[bg];
+[c]scale=1080:608:flags=lanczos[game];
+[bg]drawbox=x=0:y=548:w=1080:h=728:color=black@0.35:t=fill[bg2];
+[bg2][game]overlay=0:608,
+drawbox=x=0:y=600:w=1080:h=8:color=0xFFD400:t=fill,
+drawbox=x=0:y=1216:w=1080:h=8:color=0xFFD400:t=fill,
+drawtext=fontfile=$FONT:textfile=$TF:fontsize=76:line_spacing=14:fontcolor=white:borderw=6:bordercolor=black:x=(w-text_w)/2:y=330-text_h/2[v]"
 else
   echo "unknown LAYOUT=$LAYOUT" >&2; exit 1
 fi
