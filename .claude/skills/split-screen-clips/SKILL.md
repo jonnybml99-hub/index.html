@@ -37,13 +37,28 @@ Talk to the user in German.
 5. **Render**: `bash .claude/skills/split-screen-clips/scripts/split.sh in.mp4 out.mp4 "HOOK TITLE" ["caption"]`
    - Title: short, punchy English hook, no emoji (the font renders them as boxes).
    - Grab a preview frame of the output and check it before sending.
-6. **Deliver** with `SendUserFile` (display: render). Never publish to
+6. **Subtitles** (free, local): `bash scripts/setup.sh` once per container,
+   then `python3 -I scripts/captions.py clip.mp4 clip_subs.mp4` - 3-word
+   uppercase chunks, alternating white/yellow, centred on the divider
+   (`--y 955`; use `--y 1500` for the gameplay layout, `--lang de` for German).
+7. **Voiceover** (optional, free, local, for tips clips):
+   `python3 -I scripts/voice.py "script text" vo.wav --voice am_michael`, then
+   mix it in with the ffmpeg line in voice.py's docstring (English voices only).
+8. **Deliver** with `SendUserFile` (display: render). Never publish to
    Instagram/YouTube without the user's explicit yes per post.
+
+## Free tools (no vidIQ credits)
+
+Everything after the cut is free and local: ffmpeg (layout), Whisper small via
+sherpa-onnx (subtitles), Kokoro TTS (voice). `setup.sh` installs them from
+PyPI and GitHub releases into `/opt/clip-models` (Hugging Face is blocked).
+Only fetching a YouTube video needs vidIQ (`trim_media`, 1 credit), because
+YouTube is blocked from the container. With 0 credits: ask the user to upload
+their own recording (best for tips/tricks content) and skip step 3.
 
 ## Notes
 
 - Before spending credits, check `vidiq_balance`; tell the user what fits.
 - Warn about copyright when clipping other creators' videos, and about
   platform rules for nudity/violence in GTA footage.
-- Burned-in subtitles of the streamer's speech are not done yet (no
-  transcription tool in the container); the game's own subtitles stay visible.
+- The game's own subtitles stay visible under the burned-in captions.
